@@ -25,11 +25,10 @@ app.post("/", function (req, res) {
     const data = {
         members: [{
             email_address: email,
-            status: "Subscribed",
-            marge_fields: {
+            status: "subscribed",
+            merge_fields: {
                 FNAME: firstName,
-                LNAME: lastName,
-
+                LNAME: lastName
             }
         }]
     };
@@ -38,8 +37,29 @@ app.post("/", function (req, res) {
     const url = "https://us14.api.mailchimp.com/3.0/lists/558b38c676";
     const options = {
         method: "POST",
-        auth: "ariyan:0246012c77e239a99775ac2fe0d9c323-us14"
+        auth: "string:9b48403bb1a3b385f703c2b2edd8a332-us14"
     };
+
+
+
+    // const data = {
+    //     members: [{
+    //         email_address: email,
+    //         status: "Subscribed",
+    //         marge_fields: {
+    //             FNAME: firstName,
+    //             LNAME: lastName,
+
+    //         }
+    //     }]
+    // };
+
+    // const jasonData = JSON.stringify(data);
+    // const url = "https://us14.api.mailchimp.com/3.0/lists/558b38c676";
+    // const options = {
+    //     method: "POST",
+    //     auth: "string:9b48403bb1a3b385f703c2b2edd8a332-us14"
+    // };
 
 
     const request = http.request(url, options, (response) => {
@@ -58,6 +78,7 @@ app.listen(3000, function () {
 
 //api
 //0246012c77e239a99775ac2fe0d9c323-us14
+//9b48403bb1a3b385f703c2b2edd8a332-us14
 
 //list ID
 //558b38c676
